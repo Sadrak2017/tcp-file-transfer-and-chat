@@ -1,0 +1,8 @@
+class NetworkConfiguration:
+
+    SERVER_HOST = "127.0.0.1"
+    CLIENT_HOST = "127.0.0.1"
+    SERVER_PORT = 5000
+    SOCKET_BACKLOG = 10
+    SOCKET_BUFFER_SIZE = 8192
+    HEADER_SIZE_FIELD_LENGTH = 4
