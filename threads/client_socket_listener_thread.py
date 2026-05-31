@@ -34,8 +34,7 @@ class ClientSocketListenerThread(threading.Thread):
     def receive_file(self, protocol_header):
         destination_path = StorageConfiguration.DOWNLOAD_DIRECTORY / protocol_header.filename
         self.file_transfer_service.save_received_file(destination_path, protocol_header.filesize, self.connection_handler)
-        integrity_valid = self.file_integrity_service.validate_file_integrity(destination_path, protocol_header.sha256)
-        if integrity_valid:
+        if self.file_integrity_service.validate_file_integrity(destination_path, protocol_header.sha256):
             print(f"\nArquivo recebido: {protocol_header.filename}")
             print(f"SHA256 validado: {protocol_header.sha256}")
         else:

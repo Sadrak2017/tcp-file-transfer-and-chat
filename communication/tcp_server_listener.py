@@ -4,7 +4,8 @@ from configuration.network_configuration import NetworkConfiguration
 
 class TcpServerListener:
 
-    def create_server_socket(self):
+    @staticmethod
+    def create_server_socket():
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server_socket.bind((NetworkConfiguration.SERVER_HOST, NetworkConfiguration.SERVER_PORT))
         server_socket.listen(NetworkConfiguration.SOCKET_BACKLOG)

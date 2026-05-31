@@ -1,6 +1,6 @@
 class ConnectedClient:
 
-    def __init__( self, client_socket, client_address):
+    def __init__(self, client_socket, client_address):
         self.client_socket = client_socket
         self.client_address = client_address
 
